@@ -7,6 +7,7 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>
   <p>
@@ -19,6 +20,7 @@
     <%= comment.body %>
   </p>
 <% end %>
+
 <h2>Add a comment:</h2>
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
@@ -33,4 +35,5 @@
     <%= f.submit %>
   </p>
 <% end %>
+
 <%= link_to 'Article List', articles_path %>
